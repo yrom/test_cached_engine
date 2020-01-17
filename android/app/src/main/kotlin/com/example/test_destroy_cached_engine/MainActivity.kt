@@ -36,7 +36,7 @@ class MainActivity: Activity() {
                     text = "prewarm engine"
                     setOnClickListener {
                         if (FlutterEngineCache.getInstance().contains(CACHE_ENGINE_ID)) {
-                            Toast.makeText(applicationContext, "Already prewarmed!", Toast.LENGTH_SHORT)
+                            Toast.makeText(applicationContext, "Already prewarmed!", Toast.LENGTH_SHORT).show()
                         } else {
                             prewarm(applicationContext)
                         }
@@ -52,7 +52,7 @@ class MainActivity: Activity() {
                     text = "open flutter with prewarm engine"
                     setOnClickListener {
                         if (!FlutterEngineCache.getInstance().contains(CACHE_ENGINE_ID)) {
-                            Toast.makeText(applicationContext, "Already destroyed!", Toast.LENGTH_SHORT)
+                            Toast.makeText(applicationContext, "Already destroyed!", Toast.LENGTH_SHORT).show()
                         } else {
                             startActivity(
                                 FlutterActivity.withCachedEngine(CACHE_ENGINE_ID)
